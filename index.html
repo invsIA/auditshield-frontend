@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AuditShield AI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AuditShield AI – Free Trial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+    .container {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      padding: 10px;
+      width: 80%;
+      margin: 10px auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .upgrade {
+      margin-top: 30px;
+      color: #444;
+    }
+    .premium-btn {
+      margin-top: 10px;
+      background-color: #28a745;
+    }
+  </style>
 </head>
 <body>
-  <h1>Cargando datos del servidor...</h1>
+  <div class="container">
+    <h2>🚀 Welcome to AuditShield AI</h2>
+    <p>Get your financial audit in seconds — 100% free for your first 5 reports.</p>
+    <input type="email" id="email" placeholder="Enter your email" />
+    <button onclick="startTrial()">Start Free Audit Trial</button>
+    <div id="message"></div>
+    <div class="upgrade">
+      <p>Want unlimited access?</p>
+      <button class="premium-btn" onclick="alert('Premium upgrade coming soon')">Upgrade to Premium – $45/month</button>
+    </div>
+  </div>
   <script src="app.js"></script>
 </body>
 </html>

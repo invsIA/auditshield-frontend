@@ -1,9 +1,25 @@
-fetch("https://auditshield-backend.onrender.com/")
-  .then(response => response.json())
-  .then(data => {
-    document.body.innerHTML = `<h1>${data.message}</h1>`;
+function startTrial() {
+  const email = document.getElementById("email").value;
+  const msg = document.getElementById("message");
+  if (!email) {
+    msg.textContent = "Please enter a valid email.";
+    return;
+  }
+
+  fetch("https://auditshield-backend.onrender.com/start", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email })
   })
-  .catch(error => {
-    console.error("Error al conectar con el backend:", error);
-    document.body.innerHTML = `<h1>Error al conectar con el servidor 😢</h1>`;
+  .then(res => res.json())
+  .then(data => {
+    if (data.allowed) {
+      msg.textContent = `✅ ${data.message}`;
+    } else {
+      msg.textContent = `🚫 ${data.message}`;
+    }
+  })
+  .catch(() => {
+    msg.textContent = "Server error. Please try again later.";
   });
+}
