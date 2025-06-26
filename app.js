@@ -1,4 +1,4 @@
-fetch("https://auditshield-backend.onrender.com/")
+fetch("https://https://auditshield-backend-abc123.onrender.com/")
   .then(response => response.json())
   .then(data => {
     document.body.innerHTML = `<h1>${data.message}</h1>`;
